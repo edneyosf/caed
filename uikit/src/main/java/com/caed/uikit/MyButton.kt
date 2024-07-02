@@ -1,10 +1,7 @@
 package com.caed.uikit
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -34,17 +31,13 @@ fun MyButton(value: String, onClick: () -> Unit){
 
 @Composable
 private fun Content(value: String){
-    Text(value, color = Colors.BLACK, fontWeight = FontWeight.W300, fontSize = 18.sp)
+    Text(value, color = Colors.BLACK, fontWeight = FontWeight.W300, fontSize = 20.sp)
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
+@Preview
 @Composable
 private fun Default(){
     val content = "Sample"
 
-    Box(modifier = Modifier
-        .background(Colors.WHITE)
-        .padding(10.dp)){
-        MyButton(content, {})
-    }
+    MyButton(content, {})
 }
