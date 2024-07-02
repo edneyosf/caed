@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -36,6 +37,7 @@ fun MyTextField(value: String, label: String, onValueChange: (String) -> Unit){
         Label(label)
         Spacer(modifier = Modifier.height(10.dp))
         TextField(
+            modifier = Modifier.fillMaxWidth(),
             value = value,
             colors = colors,
             shape = RoundedCornerShape(10.dp),
