@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.caed.uikit"
+    namespace = "com.caed.core"
     compileSdk = 34
 
     defaultConfig {
@@ -29,23 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-        buildConfig = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
 }
 
 dependencies {
-    implementation(project(":core"))
-
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.ui)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui.tooling.preview)
-
-    debugImplementation(libs.androidx.ui.tooling)
+    api(libs.androidx.core.ktx)
+    testApi(libs.junit)
+    androidTestApi(libs.androidx.junit)
+    androidTestApi(libs.androidx.espresso.core)
 }
