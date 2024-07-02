@@ -21,3 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "Edney"
 include(":app")
+include(":uikit")
+include(":feature:login")
+include(":feature:pacote")
+include(":data:network")
+include(":domain")
