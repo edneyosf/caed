@@ -1,4 +1,4 @@
-package com.caed.uikit
+package com.caed.uikit.value
 
 import androidx.compose.ui.graphics.Color
 
