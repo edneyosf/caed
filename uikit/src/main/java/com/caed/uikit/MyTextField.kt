@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.caed.uikit.value.Colors
@@ -40,6 +41,8 @@ fun MyTextField(value: String, label: String, onValueChange: (String) -> Unit){
             modifier = Modifier.fillMaxWidth(),
             value = value,
             colors = colors,
+            textStyle = TextStyle(fontSize = 16.sp),
+            singleLine = true,
             shape = RoundedCornerShape(10.dp),
             onValueChange = onValueChange
         )

@@ -33,6 +33,7 @@ android {
 
 dependencies {
     api(libs.androidx.core.ktx)
+    api(libs.koin)
     testApi(libs.junit)
     androidTestApi(libs.androidx.junit)
     androidTestApi(libs.androidx.espresso.core)
