@@ -1,4 +1,4 @@
-package com.caed.login.view
+package com.caed.login.ui
 
 import com.caed.core.BaseEvent
 

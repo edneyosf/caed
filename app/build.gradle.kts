@@ -18,6 +18,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "API_BASE", "https://testcaed.free.beeceptor.com/")
     }
 
     buildTypes {
@@ -38,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -51,6 +54,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":data:network"))
     implementation(project(":feature:login"))
 
     implementation(libs.androidx.lifecycle.runtime.ktx)
