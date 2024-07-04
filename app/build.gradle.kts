@@ -19,7 +19,7 @@ android {
             useSupportLibrary = true
         }
 
-        buildConfigField("String", "API_BASE", "https://testcaed.free.beeceptor.com/")
+        buildConfigField("String", "API_BASE", "\"https://testcaed.free.beeceptor.com\"")
     }
 
     buildTypes {
