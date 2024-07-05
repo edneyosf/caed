@@ -24,14 +24,15 @@ import androidx.compose.ui.unit.sp
 import com.caed.uikit.value.Colors
 
 @Composable
-fun MyTextField(value: String, label: String, onValueChange: (String) -> Unit){
+fun MyTextField(value: String, label: String, enabled: Boolean = true, onValueChange: (String) -> Unit){
     val colors = TextFieldDefaults.colors(
         cursorColor = Colors.BLACK,
         unfocusedContainerColor = Colors.GREY0,
         focusedContainerColor = Colors.GREY0,
         focusedIndicatorColor = Colors.TRANSPARENT,
         unfocusedIndicatorColor = Colors.TRANSPARENT,
-        disabledIndicatorColor = Colors.TRANSPARENT
+        disabledIndicatorColor = Colors.TRANSPARENT,
+        disabledContainerColor = Colors.GREY0
     )
 
     Column {
@@ -41,6 +42,7 @@ fun MyTextField(value: String, label: String, onValueChange: (String) -> Unit){
             modifier = Modifier.fillMaxWidth(),
             value = value,
             colors = colors,
+            enabled = enabled,
             textStyle = TextStyle(fontSize = 16.sp),
             singleLine = true,
             shape = RoundedCornerShape(10.dp),

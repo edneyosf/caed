@@ -11,6 +11,8 @@ android {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_BASE", "\"https://testcaed.free.beeceptor.com\"")
     }
 
     buildTypes {
@@ -29,10 +31,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
+    implementation(project(":core"))
+
     api(libs.retrofit)
     api(libs.retrofit.converter)
 }

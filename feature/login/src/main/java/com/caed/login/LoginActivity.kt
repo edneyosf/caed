@@ -1,24 +1,36 @@
 package com.caed.login
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.caed.login.ui.LoginEvent
+import com.caed.core.BaseActivity
+import com.caed.login.ui.LoginUIEvent
 import com.caed.login.ui.LoginUI
+import com.caed.login.ui.LoginUIState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginActivity : ComponentActivity(), LoginEvent {
+class LoginActivity : BaseActivity(), LoginUIEvent {
 
-    private val viewModel: LoginViewModel by viewModel()
+    override val viewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContent { LoginUI(action = this).Content() }
+        setContent {
+            LoginUI(action = this)
+                .Content(viewModel.state.value)
+        }
     }
 
     override fun onSubmit(userName: String, password: String) {
-        Log.i("LoginActivity", "onSubmit: "+userName+" - "+password)
+        if(userName.isNotBlank() && password.isNotBlank()){
+            viewModel.login(userName, password)
+        }
+        else{
+            val message = getString(R.string.error_blank_fields)
+
+            viewModel.setState(LoginUIState.Error(message))
+        }
     }
+
+    override fun onDismissAlert() = viewModel.setState(LoginUIState.Default)
 }

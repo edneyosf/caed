@@ -2,4 +2,5 @@
 <resources>
     <string name="banner_description">Banner</string>
     <string name="logo_description">Logo</string>
+    <string name="close_button">Fechar</string>
 </resources>

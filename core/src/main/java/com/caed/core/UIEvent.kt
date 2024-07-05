@@ -1,3 +1,3 @@
 package com.caed.core
 
-interface BaseEvent
+interface UIEvent
