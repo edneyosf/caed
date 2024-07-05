@@ -2,7 +2,7 @@ package com.caed.uikit.value
 
 import androidx.compose.ui.graphics.Color
 
-object Colors {
+internal object Colors {
     val TEXT = Color(0xFF757575)
     val GREY0 = Color(0xFFF1F1F1)
     val GREY1 = Color(0xFFF0F0F0)

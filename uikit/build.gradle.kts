@@ -41,11 +41,11 @@ android {
 dependencies {
     implementation(project(":core"))
 
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.ui)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui.tooling.preview)
+    api(libs.androidx.material3)
+    api(libs.androidx.activity.compose)
+    api(libs.androidx.ui)
+    api(platform(libs.androidx.compose.bom))
+    api(libs.androidx.ui.tooling.preview)
 
-    debugImplementation(libs.androidx.ui.tooling)
+    debugApi(libs.androidx.ui.tooling)
 }
