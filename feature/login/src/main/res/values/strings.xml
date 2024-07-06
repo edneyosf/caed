@@ -2,7 +2,5 @@
     <string name="label_username">Usuário</string>
     <string name="label_password">Senha</string>
     <string name="submit_button">Entrar</string>
-    <string name="title_alert">Atenção</string>
     <string name="error_blank_fields">Um ou mais campos estão em branco.</string>
-    <string name="error_internal">Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.</string>
 </resources>

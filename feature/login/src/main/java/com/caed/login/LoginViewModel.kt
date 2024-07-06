@@ -1,18 +1,18 @@
 package com.caed.login
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.caed.domain.LoginUseCase
+import com.caed.domain.usecase.LoginUseCase
 import com.caed.login.ui.LoginUIState
 import com.caed.network.model.Data
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
+internal class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
 
-    private val _state = mutableStateOf<LoginUIState>(LoginUIState.Default)
-    val state: State<LoginUIState> = _state
+    private val _state = MutableStateFlow<LoginUIState>(LoginUIState.Default)
+    val state = _state.asStateFlow()
 
     fun setState(newState: LoginUIState){
         _state.value = newState
@@ -20,15 +20,14 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
 
     fun login(userName: String, password: String) = viewModelScope.launch {
         _state.value = LoginUIState.Loading
-        val data = loginUseCase(userName, password)
 
-        if(data is Data.Success){
-            _state.value = LoginUIState.Success
-        }
-        else if(data is Data.Error){
-            val message = data.cause?.message
+        when(val data = loginUseCase(userName, password)){
+            is Data.Success -> _state.value = LoginUIState.Success
+            is Data.Error -> {
+                val message = data.cause?.message
 
-            _state.value = LoginUIState.Error(message)
+                _state.value = LoginUIState.Error(message)
+            }
         }
     }
 }

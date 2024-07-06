@@ -1,3 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">pacote</string>
+    <string name="title_packages">Listagem de pacotes</string>
+    <string name="title_received_metrics">Recebimento de pacotes</string>
+    <string name="title_devolution_metrics">Devolução de pacotes</string>
+    <string name="label_received">Recebidos</string>
+    <string name="label_devolution">Devolvidos</string>
+    <string name="label_missing">Faltantes</string>
+    <string name="tab_item_packages">Pacotes</string>
+    <string name="tab_item_status">Status</string>
+    <string name="tab_item_data">Dados</string>
+    <string name="label_list_packages">Lista de pacotes</string>
+    <string name="label_data_box">Dados da caixa</string>
+    <string name="label_code">CÓDIGO</string>
+    <string name="label_point">PONTO DE ENTREGA</string>
+    <string name="label_city">MUNICÍPIO</string>
+    <string name="label_school">ESCOLA</string>
+    <string name="label_year">ANO ESCOLAR/ETAPA</string>
+    <string name="label_discipline">COMPONENTE CURRICULAR</string>
+    <string name="label_status_box">Status da caixa</string>
+    <string name="label_status_package">Status do pacote</string>
+    <string name="no_moviment">Sem movimentação</string>
 </resources>

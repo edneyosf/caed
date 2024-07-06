@@ -29,5 +29,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.caed.pacote.PackageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Edney"/>
+
     </application>
 </manifest>
