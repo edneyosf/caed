@@ -1,3 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">uikit</string>
+    <string name="banner_description">Banner</string>
+    <string name="logo_description">Logo</string>
+    <string name="close_button">Fechar</string>
+    <string name="back_button">Voltar</string>
+    <string name="text_packages">pacotes</string>
+    <string name="navigation_item_home">Início</string>
+    <string name="navigation_item_options">Opções</string>
+    <string name="navigation_item_tutorials">Tutoriais</string>
 </resources>
