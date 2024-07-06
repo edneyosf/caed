@@ -1,7 +1,6 @@
 package com.caed.edney
 
 import android.app.Application
-import com.caed.edney.di.modules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
 
@@ -15,6 +14,6 @@ class App : Application() {
 
     private fun initKoin() = startKoin {
         androidContext(this@App)
-        modules(modules)
+        modules(appModules)
     }
 }

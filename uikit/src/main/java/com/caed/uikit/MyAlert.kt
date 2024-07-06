@@ -16,7 +16,7 @@ fun MyAlert(dialogTitle: String, dialogText: String, onDismiss: () -> Unit) {
         containerColor = Colors.WHITE,
         title = { Text(text = dialogTitle) },
         text = { Text(text = dialogText, color = Colors.TEXT) },
-        onDismissRequest = { onDismiss() },
+        onDismissRequest = {},
         confirmButton = {},
         dismissButton = {
             TextButton(onClick = { onDismiss() }) {

@@ -12,7 +12,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "API_BASE", "\"https://testcaed.free.beeceptor.com\"")
+        buildConfigField("String", "API_BASE", "\"https://35d67c18-183d-47c1-84c1-8d42e26635c8.mock.pstmn.io/\"")
     }
 
     buildTypes {

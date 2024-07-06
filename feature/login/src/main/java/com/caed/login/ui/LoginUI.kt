@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.caed.core.UI
 import com.caed.core.whenKeyboardVisible
 import com.caed.login.R
+import com.caed.core.R as RCore
 import com.caed.uikit.Banner
 import com.caed.uikit.BaseUI
 import com.caed.uikit.MyAlert
@@ -35,7 +36,7 @@ import kotlinx.coroutines.launch
 internal class LoginUI(override val action: LoginUIEvent? = null) : UI(action) {
 
     @Composable
-    fun Content(state: LoginUIState? = null) = BaseUI {
+    fun UI(state: LoginUIState? = null) = BaseUI {
         val scrollState = rememberScrollState()
         val userName = remember { mutableStateOf("") }
         val password = remember { mutableStateOf("") }
@@ -46,7 +47,11 @@ internal class LoginUI(override val action: LoginUIEvent? = null) : UI(action) {
         var msgError = ""
 
         if (error) {
-           msgError = (state as LoginUIState.Error).message ?: stringResource(id = R.string.error_internal)
+           msgError = (state as LoginUIState.Error).message ?: stringResource(id = RCore.string.error_internal)
+
+            MyAlert(stringResource(id = RCore.string.title_alert), msgError){
+                action?.onDismissAlert()
+            }
         }
 
         DisposableEffect(view) {
@@ -56,12 +61,6 @@ internal class LoginUI(override val action: LoginUIEvent? = null) : UI(action) {
             view.viewTreeObserver.run {
                 addOnGlobalLayoutListener(listener)
                 onDispose { removeOnGlobalLayoutListener(listener) }
-            }
-        }
-
-        if(error){
-            MyAlert(stringResource(id = R.string.title_alert), msgError){
-                action?.onDismissAlert()
             }
         }
 
@@ -120,4 +119,4 @@ internal class LoginUI(override val action: LoginUIEvent? = null) : UI(action) {
 
 @Preview
 @Composable
-private fun LoginScreen() = LoginUI().Content()
+private fun LoginScreen() = LoginUI().UI()

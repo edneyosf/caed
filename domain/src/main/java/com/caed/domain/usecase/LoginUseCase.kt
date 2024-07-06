@@ -1,4 +1,4 @@
-package com.caed.domain
+package com.caed.domain.usecase
 
 import com.caed.network.model.Data
 import com.caed.network.model.response.LoginResponse
